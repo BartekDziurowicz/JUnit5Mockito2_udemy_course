@@ -1,6 +1,7 @@
-package testing;
+package testing.cart;
 
 import lombok.Getter;
+import testing.Meal;
 import testing.order.Order;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ public class Cart {
     @Getter
     private List<Order> orders = new ArrayList<>();
 
-    void addOrderToCart(Order order){
+    public void addOrderToCart(Order order){
         this.orders.add(order);
     }
 
@@ -18,7 +19,7 @@ public class Cart {
         this.orders.clear();
     }
 
-    void simulateLargeOrder(){
+    public void simulateLargeOrder(){
         for(int i=0;i<1000;i++){
             Meal meal = new Meal(i%10, "Hamburger no. "+i);
             Order order = new Order();

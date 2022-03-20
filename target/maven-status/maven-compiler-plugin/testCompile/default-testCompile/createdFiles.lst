@@ -2,5 +2,8 @@ testing/MealTest.class
 testing/order/OrderStatusTest.class
 testing/CartTest.class
 testing/account/AddressTest.class
+testing/account/AccountRepositoryStub.class
+testing/account/AccountServiceTest.class
+testing/order/OrderBackupTest.class
 testing/account/AccountTest.class
 testing/order/OrderTest.class

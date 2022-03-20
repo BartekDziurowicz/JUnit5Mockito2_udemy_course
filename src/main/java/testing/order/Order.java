@@ -1,15 +1,22 @@
 package testing.order;
 
 import lombok.Getter;
+import lombok.ToString;
 import testing.Meal;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@ToString
+@Getter
 public class Order {
 
-    @Getter
+    private OrderStatus orderStatus;
     private List<Meal> meals = new ArrayList<>();
+
+    public void changeOrderStatus(OrderStatus orderStatus){
+        this.orderStatus=orderStatus;
+    }
 
     public void addMealToOrder(Meal meal){
         this.meals.add(meal);

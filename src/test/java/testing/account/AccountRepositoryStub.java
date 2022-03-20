@@ -6,7 +6,7 @@ import java.util.List;
 public class AccountRepositoryStub implements AccountRepository{
     @Override
     public List<Account> getAllAccounts() {
-        Address address1 = new Address("Kwiatowa", "33/5")
+        Address address1 = new Address("Kwiatowa", "33/5");
         Account account1 = new Account(address1);
 
         Account account2 = new Account();
