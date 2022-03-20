@@ -1,10 +1,12 @@
 package testing;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
-
+    @Getter
     private List<Order> orders = new ArrayList<>();
 
     void addOrderToCart(Order order){
