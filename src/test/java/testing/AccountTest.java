@@ -2,6 +2,8 @@ package testing;
 
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AccountTest {
@@ -12,6 +14,9 @@ public class AccountTest {
         Account newAccount = new Account();
         //then
         assertFalse(newAccount.isActive());
+        //then cd...     hamcrest matchery
+        assertThat(newAccount.isActive(), equalTo(false));
+        assertThat(newAccount.isActive(), is(false));
     }
 
     @Test
@@ -22,6 +27,9 @@ public class AccountTest {
         newAccount.active();
         //then
         assertTrue(newAccount.isActive());
+        //then cd...     hamcrest matchery
+        assertThat(newAccount.isActive(), equalTo(true));
+        assertThat(newAccount.isActive(), is(true));
     }
 
     @Test
@@ -32,6 +40,9 @@ public class AccountTest {
         Address address = account.getDefaultDeliveryAddress();
         //then
         assertNull(address);
+        //then cd...     hamcrest matchery
+        assertThat(account.getDefaultDeliveryAddress(), equalTo(null));
+        assertThat(account.getDefaultDeliveryAddress(), nullValue());
     }
 
     @Test
@@ -42,6 +53,8 @@ public class AccountTest {
         account.setDefaultDeliveryAddress(address);
         //then
         assertNotNull(account.getDefaultDeliveryAddress());
+        //then cd...     hamcrest matchery
+        assertThat(account.getDefaultDeliveryAddress(), notNullValue());
     }
 
 }
