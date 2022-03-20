@@ -18,4 +18,8 @@ public class Order {
         this.meals.remove(meal);
     }
 
+    void cancel(){
+        this.meals.clear();
+    }
+
 }
