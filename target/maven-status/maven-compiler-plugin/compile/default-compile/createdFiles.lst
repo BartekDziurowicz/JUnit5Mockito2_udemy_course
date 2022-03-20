@@ -1,3 +1,8 @@
-testing/Cart.class
+testing/order/Order.class
+testing/extensions/BeforeAfterExtension.class
+testing/extensions/IAExceptionIgnoreExtension.class
+testing/order/OrderStatus.class
+testing/account/Account.class
+testing/account/Address.class
 testing/Meal.class
-testing/Order.class
+testing/Cart.class

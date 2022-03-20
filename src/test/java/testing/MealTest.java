@@ -1,6 +1,7 @@
 package testing;
 
 import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,6 +10,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import testing.extensions.IAExceptionIgnoreExtension;
+import testing.order.Order;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -110,6 +113,7 @@ class MealTest {
         return cakeNames.stream();
     }
 
+    @Tag("fries")
     @TestFactory
     Collection<DynamicTest> calculateMealProces(){
         Order order = new Order();
