@@ -3,12 +3,11 @@ package testing;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
+@Getter
 @EqualsAndHashCode
 public class Meal {
 
-    @Getter
     private int price;
-    @Getter
     private int quantity;
     private String name;
 
@@ -36,7 +35,8 @@ public class Meal {
         return this.price-discount;
     }
 
-    int sumPrice(){
+    public int sumPrice(){
         return getPrice() * getQuantity();
     }
+
 }

@@ -52,6 +52,7 @@ class CartServiceTest {
         inOrder.verify(cartHandler).sendToPrepare(cart);
 
         assertThat(resultCart.getOrders(), hasSize(1));
+
         assertThat(resultCart.getOrders().get(0).getOrderStatus(), equalTo(OrderStatus.PREPARING));
 
     }
