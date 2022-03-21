@@ -22,6 +22,8 @@ import java.util.stream.Stream;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.mock;
 
 class MealTest {
 
@@ -142,6 +144,21 @@ class MealTest {
         return price*quantity;
     }
 
+    @Test
+    void testMealSumProce(){
+
+        //given
+        Meal meal = mock(Meal.class);
+        given(meal.getPrice()).willReturn(15);
+        given(meal.getQuantity()).willReturn(3);
+        given(meal.sumPrice()).willCallRealMethod();
+
+        //when
+        int result = meal.sumPrice();
+
+        //then
+        assertThat(result, equalTo(45));
+    }
 
 
 }

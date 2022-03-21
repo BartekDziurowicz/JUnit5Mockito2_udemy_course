@@ -10,15 +10,20 @@ public class CartService {
         this.cartHandler = cartHandler;
     }
 
-    Cart processCart(Cart cart){
-        if(cartHandler.canHandleCart(cart)){
+    Cart processCart(Cart cart) {
+        if (cartHandler.canHandleCart(cart)) {
             cartHandler.sendToPrepare(cart);
-            cart.getOrders().forEach(order -> {order.changeOrderStatus(OrderStatus.PREPARING);});
+            cart.getOrders().forEach(order -> {
+                order.changeOrderStatus(OrderStatus.PREPARING);
+            });
             return cart;
         } else {
-            cart.getOrders().forEach(order -> {order.changeOrderStatus(OrderStatus.REJECTED);});
+            cart.getOrders().forEach(order -> {
+                order.changeOrderStatus(OrderStatus.REJECTED);
+            });
             return cart;
         }
     }
+}
 
 

@@ -1,1 +1,1 @@
-New order: testing.order.Order@3872bc37 backed up.
+New order: Order(orderStatus=null, meals=[testing.Meal@41357dd]) backed up.
